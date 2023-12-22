@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+
+table {
+    font-size: 2.3em;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    border-color: lightgray;
+    border: 4px solid lightgray;
+    width: 100%;
+    height:550px;
+  }
+
+  h1{
+    text-align: center;
+    font-size: 2.2em;
+    font-family: arial, sans-serif;
+    border: 35px solid #19090a;
+    color: #fff;
+    left: 30%; 
+    background-color: #19090a; 
+}
+
+  
+th {
+    border-bottom: 4px solid lightgray;
+    text-align: left;
+    padding: 8px;
+}
+
+  
+
+td{
+    color: #fff;
+    border-bottom: 4px solid lightgray;
+    border-top: 4px solid lightgray;
+    background-color: #19090a; 
+    text-align: center;
+    padding: 8px;
+}
+  
+
+
+
+/* #################### Small screen ################## */
+
+@media(max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+}
+
+
+
+/* ################## Landscpe mode ################# */
+
+@media(orientation: landscape) and (max-height: 500px){
+    
+}
