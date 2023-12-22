@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Grid</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+        body {
+            background: rgb(19, 19, 19);
+            color: #fff;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #353535;
+            font-size: 3rem;
+            color: #fff;
+            box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+            height: 100%;
+            width: 100%;
+            border-radius: 4px;
+            transition: all 500ms;
+            overflow: hidden;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .card:hover {
+            box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+
+        .animated-grid {
+        height: 85vh;
+        margin-bottom: 200px;
+
+        display: grid;
+        gap: 1rem;
+
+        /* Explicit grid */
+        grid-template-areas:
+            'a  b  c  d'
+            'l  🌟 🌟 e'
+            'k  🌟 🌟 f'
+            'j  i  h  g';
+
+        grid-template-rows: repeat(4, 25%);
+        grid-template-columns: 240px auto auto 240px;
+
+        --stagger-delay: 100ms;
+        }
+
+        @keyframes cardEntrance {
+        from {
+            opacity: 0;
+            transform: scale(0.3);
+            filter: hue-rotate(180deg);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+            filter: hue-rotate(0deg);
+        }
+        }
+
+        .card {
+        background-color: rgb(36, 243, 147);
+        animation: cardEntrance 700ms ease-out;
+        animation-fill-mode: backwards;
+        }
+
+        .card:nth-child(1) {
+        grid-area: a;
+        animation-delay: calc(1 * var(--stagger-delay));
+        }
+        .card:nth-child(2) {
+        grid-area: b;
+        animation-delay: calc(2 * var(--stagger-delay));
+        }
+        .card:nth-child(3) {
+        grid-area: c;
+        animation-delay: calc(3 * var(--stagger-delay));
+        }
+        .card:nth-child(4) {
+        grid-area: d;
+        animation-delay: calc(4 * var(--stagger-delay));
+        }
+        .card:nth-child(5) {
+        grid-area: e;
+        animation-delay: calc(5 * var(--stagger-delay));
+        }
+        .card:nth-child(6) {
+        grid-area: f;
+        animation-delay: calc(6 * var(--stagger-delay));
+        }
+        .card:nth-child(7) {
+        grid-area: g;
+        animation-delay: calc(7 * var(--stagger-delay));
+        }
+        .card:nth-child(8) {
+        grid-area: h;
+        animation-delay: calc(8 * var(--stagger-delay));
+        }
+        .card:nth-child(9) {
+        grid-area: i;
+        animation-delay: calc(9 * var(--stagger-delay));
+        }
+        .card:nth-child(10) {
+        grid-area: j;
+        animation-delay: calc(10 * var(--stagger-delay));
+        }
+        .card:nth-child(11) {
+        grid-area: k;
+        animation-delay: calc(11 * var(--stagger-delay));
+        }
+        .card:nth-child(12) {
+        grid-area: l;
+        animation-delay: calc(12 * var(--stagger-delay));
+        }
+        .card:last-child {
+        grid-area: 🌟;
+        animation-delay: calc(13 * var(--stagger-delay));
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Animated Grid</h1>
+    <section class="animated-grid">
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29zbWljfGVufDB8fDB8fHww&auto=format&fit=crop&w=300&q=60)">1</div>
+        <div class="card card-wide" style="background-image: url(https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29zbWljfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60)">2</div>
+        <div class="card" style="background-image: url(https://plus.unsplash.com/premium_photo-1680367646026-2804fbc10a96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNvc21pY3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60)">3</div>
+        <div class="card card-tall" style="background-image: url(https://images.unsplash.com/photo-1537420327992-d6e192287183?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60)">4</div>
+        <div class="card"style="background-image: url(https://images.unsplash.com/photo-1505506874110-6a7a69069a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60)">5</div>
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3BhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60)">6</div>
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60)">7</div>
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3BhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60)">8</div>
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=850&q=80)">9</div>
+        <div class="card" style="background-image: url(https://plus.unsplash.com/premium_photo-1666232903270-e905b4b093e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80)">10</div>
+        <div class="card" style="background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29zbWljfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60)">11</div>
+        <div class="card card-wide" style="background-image: url(https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29zbWljfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60)">12</div>
+        <div class="card card-wide" style="background-image: url(https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29zbWljfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60)">Main</div>
+    </section>
+
+    <section class="animated-grid">
+      <div class="card">a</div>
+      <div class="card">b</div>
+      <div class="card">c</div>
+      <div class="card">d</div>
+      <div class="card">e</div>
+      <div class="card">f</div>
+      <div class="card">g</div>
+      <div class="card">h</div>
+      <div class="card">i</div>
+      <div class="card">j</div>
+      <div class="card">k</div>
+      <div class="card">l</div>
+      <div class="card">main</div>
+    </section>
+    
+  </body>
+</html>
