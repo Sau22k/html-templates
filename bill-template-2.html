@@ -1,0 +1,362 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+*,
+        *::after,
+        *::before{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            border-spacing: 30px;
+        }
+
+        th{
+            padding: 3px;
+			font-size: 17px;
+		}
+
+        .f-th-pad{
+            padding: 9px;
+            font-size: 17px;
+        }
+        
+
+        .dataRow{
+            text-align: left;
+        }
+
+        .row-pad{
+            padding: 25px 50px;
+        }
+
+        .btn-primary {
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 0.7em 1em;
+            text-decoration: none;
+            border-radius: 50px;
+            cursor: pointer;
+            outline: none;
+            margin-top: 1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: rgb(23, 7, 112);
+        }
+
+        .btn-primary:hover{
+            transform: scale(1.2);
+            /* box-shadow: 5px 5px 15px rgba(0,0,0,0.6); */
+        }
+
+        .invoiceBottom {
+            font-size: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .address {
+            display: inline-flex;
+        }
+
+        #bg-text {
+            color:lightgrey;
+            font-size:120px;
+            transform:rotate(300deg);
+            -webkit-transform:rotate(300deg);
+        }
+
+        @media (orientation: landscape) {
+                body {
+                    flex-direction: row;
+                }
+            }
+
+        @media (orientation: portrait) {
+                body {
+                    flex-direction: column;
+                }
+            }
+
+        
+    </style>
+
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th><img src="https://p1.hiclipart.com/preview/28/553/85/undertale-pixel-art-sprite-sansserif-comic-sans-sprite-comic-video-games-animation-png-clipart.jpg" alt="logo" width="100" height="60" align=left></th>
+            <th style="text-align: right;">Invoice No. :${Invoice_Details.Invoice_Number}</th>
+        </tr>
+    </table>
+
+    <p style="border: 1px dashed black;"></p>
+    <p style="padding: 3px;"></p>
+	
+	
+    <table>
+
+		<tr style="background: rgb(189, 179, 249); "  class="dataRow" class="row-pad">
+			<th rowspan="2" style="background-color: #fff;"></th>
+			<td></td>
+			<th class="address">Picking Address</th>
+			<td></td>
+			<th class="address">Shipping Address</th>
+			<td style="background-color: white;"></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+			<td></td>
+			<td style="word-break: break-all;">Name: ${Consumer_Communication_Address_Info.Default_Addressee}</td>
+			<td></td>
+			<td style="word-break: break-all;">Name: ${Consumer_Communication_Address_Info.Shipment_Addressee}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+            <td style="word-break: break-all;">Invoice No. :${Invoice_Details.Invoice_Number}</td>
+			<td></td>
+			<td style="word-break: break-all;">Street1: ${Consumer_Communication_Address_Info.Default_addressLine1}</td>
+			<td></td>
+			<td style="word-break: break-all;">Street1: ${Consumer_Communication_Address_Info.Shipment_address_Line1}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+			<td style="word-break: break-all;">Order ID: ${Consumer_Communication_Address_Info.Order_No}</td>
+			<td></td>
+			<td style="word-break: break-all;">Street2: ${Consumer_Communication_Address_Info.Default_address_Line2}</td>
+			<td></td>
+			<td style="word-break: break-all;">Street2: ${Consumer_Communication_Address_Info.Shipment_address_Line2}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad" >
+			<td style="word-break: break-all;">Invoice Date: ${Invoice_Details.Invoice_Date}</td>
+			<td></td>
+			<td style="word-break: break-all;">City: ${Consumer_Communication_Address_Info.Default_city}</td>
+			<td></td>
+			<td style="word-break: break-all;">City: ${Consumer_Communication_Address_Info.Shipment_city}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad" >
+			<td></td>
+			<td></td>
+			<td style="word-break: break-all;">State: ${Consumer_Communication_Address_Info.Default_state}</td>
+			<td></td>
+			<td style="word-break: break-all;">State: ${Consumer_Communication_Address_Info.Shipment_state}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+            <td></td>
+			<td></td>
+			<td style="word-break: break-all;">Pin Code: ${Consumer_Communication_Address_Info.Default_Zip_Code}</td>
+			<td></td>
+			<td style="word-break: break-all;">Pin Code: ${Consumer_Communication_Address_Info.Shipment_zip_Code}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+			<td></td>
+            <td></td>
+			<td style="word-break: break-all;">Mobile: ${Consumer_Communication_Address_Info.Default_Mobile_Number}</td>
+			<td></td>
+			<td style="word-break: break-all;">Mobile: ${Consumer_Communication_Address_Info.Shipment_Mobile_Number}</td>
+			<td></td>
+		</tr>
+
+	</table>
+
+    <p style="border: 1px solid black;"></p>
+    <p style="padding: 3px;"></p>
+
+    <p style="padding: 2px; color: #fff;"></p>
+    
+    <table>
+
+        <tr style="background: rgb(189, 179, 249); " class="row-pad" class="dataRow">
+
+            <th class="f-th-pad">Brand</th>
+            <td></td>
+            <th class="f-th-pad">Product</th>
+            <td></td>
+            <th class="f-th-pad">Qty</th>
+            <td></td>
+            <th class="f-th-pad">MRP (per unit)</th>
+            <td></td>
+            <th class="f-th-pad">Discount</th>
+            <td></td>
+            <th class="f-th-pad">Tax</th>
+            <td></td>
+            <th class="f-th-pad">Total</th>
+            <td></td>
+
+        </tr>
+
+    
+        <#list Order_Information_Customer_Vice as Order_Information_Customer_Vice>
+
+        <tr class="row-pad" style="word-break: break-all; text-align: center;">
+
+            <td>${Order_Information_Customer_Vice.Brand}</td>
+			<td></td>
+			<td>${Order_Information_Customer_Vice.Product_Name}</td>
+			<td></td>
+			<td>${Order_Information_Customer_Vice.Qty}</td>
+			<td></td>
+            <td>${Order_Information_Customer_Vice.Product_Price}</td>
+            <td></td>
+            <td>${Order_Information_Customer_Vice.Discount_in_Base_Price}</td>
+            <td></td>
+            <td>${Order_Information_Customer_Vice.Total_GST}</td>
+            <td></td>
+            <td>${Order_Information_Customer_Vice.Total_Item_Price}</td>
+            <td></td>
+
+        </tr>
+
+        </#list>
+
+        <tr class="row-pad">
+
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+  
+        <tr class="row-pad">
+
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th style="text-align: left;">Order subtotal</th>
+            <td></td>
+            <td style="text-align: center; word-break: break-all;">${Display_Cost_Information_For_Invoice.Sum_of_Item_Price}</td>
+            <td></td>
+
+        </tr>
+
+        <tr class="row-pad">
+
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th style="text-align: left;">Discount</th>
+            <td></td>
+            <td style="text-align: center; word-break: break-all;">${Display_Cost_Information_For_Invoice.Sum_Of_Discount}</td>
+            <td></td>
+
+        </tr>
+
+        <tr class="row-pad">
+
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th style="text-align: left;">Total Tax</th>
+            <td></td>
+            <td style="text-align: center; word-break: break-all;">${Display_Cost_Information_For_Invoice.Total_Tax}</td>
+            <td></td>
+
+        </tr>
+
+        <tr class="row-pad">
+
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th></th>
+            <td></td>
+            <th style="text-align: left;">Total</th>
+            <td></td>
+            <td style="text-align: center; word-break: break-all;">${Display_Cost_Information_For_Invoice.Sum_of_Total_Price}</td>
+            <td></td>
+
+        </tr>
+
+        
+    </table>
+
+    <p style="border: 1px solid black;"></p>
+    <p style="padding: 3px;"></p>
+
+    <p></p>
+
+    <p style="font-size: 10px;">Contact Us: 0808 765 432 | retail@store.com </p>
+
+    <p style="font-size: 10px;">Warehouse address</p>
+
+    <p class="invoiceBottom">This is a computer generated order. No signature required.</p>
+
+    <p style="padding: 2px; color: #fff;" >html temp © 2021 SAU, All Right Reserved</p>      
+
+</body>
+</html>
