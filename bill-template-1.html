@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Consumer Bill</title>
+
+    <style>
+
+        *, :after, :before {
+            box-sizing: border-box;
+            border: 0 solid #e5e7eb;
+        }
+
+        *, :after, :before {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgba(59,130,246,.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+        }
+
+        :root {
+            --color-primary: 255,50,105;
+            --color-primary-darker: 60,0,107;
+            --color-primary-dark: 76,21,119;
+            --color-primary-violet: 124,10,177;
+            --color-primary-void: 43,30,53;
+            --color-primary-void-dark-lighter: 245,241,247;
+            --color-secondary: 124,10,177;
+            --color-secondary-lemonade: 245,233,60;
+            --color-secondary-slime: 9,184,79;
+            --color-secondary-tangerine: 255,121,77;
+            --color-base: 255,255,255;
+            --color-inverted: 34,34,34;
+            --shadow-sm: 0 0 8px rgba(40,44,63,.2);
+            --shadow-md: 0px 2px 4px rgba(0,0,0,.08);
+            --shadow-base: 0 2px 11.4286px rgba(0,0,0,.08);
+            --shadow-lg: 0 2px 10px rgba(0,0,0,.12);
+            --color-primary-lightest: 255,37,50;
+            --color-success: 39,184,123;
+            --color-success-light: 218,244,229;
+            --color-error: 217,0,0;
+            --text-color-muted-light: var( --color-inverted );
+            --text-color-muted: 167,167,167;
+            --text-color-muted-dark: 117,117,117;
+            --text-color-muted-orange: 248,180,43;
+            --background-color-primary-light: 142,0,51;
+            --background-color-muted-lighter: 249,249,249;
+            --background-color-muted-light: 244,244,244;
+            --background-color-muted: 228,228,228;
+            --color-warning: 250,135,92;
+            --background-color-muted-dark: 117,117,117;
+            --border-color-primary: var(--color-primary);
+            --border-color-muted-lightest: 236,236,236;
+            --border-color-muted-lighter: 234,234,234;
+            --border-color-muted-light: var( --color-inverted );
+            --border-color-muted: 19,0,34;
+        }
+
+        body {
+            /* margin: 15px; */
+        }
+
+        .pStyle {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .pStyle1 {
+            text-align: center;
+            font-size: .7rem;
+        }
+
+        .pStyle3 {
+            font-size: .9rem;
+        }
+        
+
+        dd, dl, figure, h1, h2, h3, h4, h5, h6, p {
+            margin: 0;
+        }
+
+        .font-lato {
+            font-family: lato;
+        }
+
+        .font-size {
+            font-size: 0.75rem;
+        }
+
+        .view {
+            --tw-bg-opacity: 1;
+            background-color: rgba(var(--color-base),var(--tw-bg-opacity));
+            /* padding: .75rem 1rem; */
+            text-align: left;
+        }
+
+        .Tview {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+            justify-content: space-between;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .cart {
+            border-radius: 0.25rem;
+            background-color: #fff;
+            border: 1px solid palevioletred;
+        }
+
+        .cartItem {
+            padding: 10px 20px;
+        }
+
+        .font-color {
+            color: palevioletred;
+        }
+
+        .button {
+            padding: 14px 30px;
+        }
+
+        .px-10 {
+            padding: .75rem 1rem;
+        }
+
+        .bg-skin-success-light {
+            --tw-bg-opacity: 1;
+            background-color: rgba(var(--color-success-light),var(--tw-bg-opacity));
+        }
+    
+        .pl {
+            padding-left: 0.25rem;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .line-through {
+            text-decoration-line: line-through;
+        }
+
+        .marRight {
+            margin-right: 0.25rem;
+        }
+
+        .text-skin-muted {
+            --tw-text-opacity: 1;
+            color: rgba(var(--text-color-muted),var(--tw-text-opacity));
+        }
+
+        .text-skin-success {
+            --tw-text-opacity: 1;
+            color: rgba(var(--color-success),var(--tw-text-opacity));
+        }
+
+        .border-t {
+            border-top-width: 1px;
+        }
+
+        @media (min-width: 768px){
+            .md\:rounded {
+                border-radius: 0.25rem;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div style="padding-top: 20px;">
+        <p class="pStyle"><strong>STORE NAME</strong></p>
+        <p class="pStyle1" style="padding-top: 10px;">${addressline1}</p>
+        <p class="pStyle1">${addressline2}</p>
+        <p class="pStyle1">${addressline3}</p>
+        <p class="pStyle1">PH: ${mobileNum}</p>
+        <p class="pStyle1">Tax Invoive</p>
+        <p class="pStyle1">GSTIN No. ${234567W4356}</p>
+    </div>
+
+    <div>
+        <p class="pStyle3">Bill No. ${645321}</p>
+    </div>
+
+    <div class="view">
+        <div class="Tview">
+            <div class="flex">
+                <p class="font-lato font-size">Date: ${28/07/2023}</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">Time: ${09:33:41 PM}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class=" Tview border-t font-size"></div>
+
+    <div class="view">
+        <div class="Tview">
+            <div class="flex">
+                <p class="font-lato font-size">Item Name</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">Qty</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">MRP</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">Discount</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">Amt</p>
+            </div>
+        </div>
+    </div>
+
+    <div class=" Tview border-t font-size"></div>
+    
+    <#list as >
+    <div class="view">
+        <div class="Tview">
+            <div>
+                <p class="font-lato font-size">${}</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size" style="padding-left: 30px;">${}</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">${}</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">${}</p>
+            </div>
+            <div class="flex">
+                <p class="font-lato font-size">${}</p>
+            </div>
+        </div>
+        </#list>
+        
+
+        <div class=" Tview border-t font-size"></div>
+
+        <div class="view">
+            <div class="Tview">
+                <div class="flex">
+                    <p class="font-lato font-size">T Items: ${3}</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">T Qty: ${6}</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size" style="padding-left: 35px;">T Discount: ${33}</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size" >T Amt: ${133}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class=" Tview border-t font-size"></div>
+        
+
+        <div class="view">
+            <div>
+                <div>
+                    <p class="pStyle">Total: ${}</p>
+                    <p class="pStyle1" style="padding-top: 5px;">You have saved: ${}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class=" Tview border-t font-size"></div>
+
+        <div class="view">
+            <div class="Tview">
+                <div class="flex">
+                    <p class="font-lato font-size">Taxable Amt</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">CGST %</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">CGST Amt</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">SGST %</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">SGST Amt</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class=" Tview border-t font-size"></div>
+
+        <div class="view">
+            <div class="Tview">
+                <div>
+                    <p class="font-lato font-size">${}</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size" style="padding-left: 30px;">${}</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">${}</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">${}</p>
+                </div>
+                <div class="flex">
+                    <p class="font-lato font-size">${}</p>
+                </div>
+            </div>
+    
+        <div class=" Tview border-t font-size"></div>
+
+    </div>
+
+    <p class="pStyle1" style="padding-top: 5px;">Goods Once Sold Cannot Be Taken Back or Exchanged</p>
+</body>
+</html>
