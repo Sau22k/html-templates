@@ -1,0 +1,213 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *,
+        *::after,
+        *::before{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            border-spacing: 30px;
+        }
+
+        th{
+            padding: 5px;
+			font-size: 17px;
+		}
+
+        td {
+			padding-left: 5px;
+		}
+
+        .f-th-pad{
+            padding: 9px;
+            font-size: 17px;
+        }
+        
+
+        .dataRow{
+            text-align: left;
+            word-break: break-all;
+        }
+
+        .row-pad{
+            padding: 25px 50px;
+        }
+
+        .address {
+            display: inline-flex;
+        }
+
+        .btn-primary {
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 0.7em 1em;
+            text-decoration: none;
+            border-radius: 50px;
+            cursor: pointer;
+            outline: none;
+            margin-top: 1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: rgb(23, 7, 112);
+        }
+
+        .btn-primary:hover{
+            transform: scale(1.2);
+            /* box-shadow: 5px 5px 15px rgba(0,0,0,0.6); */
+        }
+
+        .invoiceBottom {
+            font-size: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (orientation: landscape) {
+                body {
+                    flex-direction: row;
+                }
+            }
+
+        @media (orientation: portrait) {
+                body {
+                    flex-direction: column;
+                }
+            }
+        
+    </style>
+
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th><img src="https://p1.hiclipart.com/preview/28/553/85/undertale-pixel-art-sprite-sansserif-comic-sans-sprite-comic-video-games-animation-png-clipart.jpg" alt="nslhub retail logo" width="70" height="60" align=left></th>
+            <th style="text-align: right; word-break: break-all;">Invoice No. :${Package_Information.Invoice_No}</th>
+        </tr>
+    </table>
+
+    <p style="border: 1px dashed black;"></p>
+    <p style="padding: 3px;"></p>
+	
+	
+	<table>
+
+		<tr style="background: rgb(189, 179, 249); " class="row-pad">
+			<th rowspan="3" style="background-color: #fff;"><img src="https://tiny.cc/tiny/qr-image/tiny.cc~qrCode~l~150.svg" alt="QR Code" width="80" height="60" align=center></th>
+			<td></td>
+			<th class="address">Pick Up Address</th>
+			<td></td>
+			<th class="address">Shipping Address</th>
+			<td style="background-color: white;"></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+			<td></td>
+			<td>${Address_Digital_Commerce.Addressee}</td>
+			<td></td>
+			<td>${Consumer_Communication_Address_Info.Shipment_Addressee}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+			<td></td>
+			<td>${Address_Digital_Commerce.Address_Line_1}</td>
+			<td></td>
+			<td>${Consumer_Communication_Address_Info.Shipment_address_Line1}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+			<td>Order ID: ${Consumer_Communication_Address_Info.Order_No}</td>
+			<td></td>
+			<td>${Address_Digital_Commerce.Address_Line_2}</td>
+			<td></td>
+			<td>${Consumer_Communication_Address_Info.Shipment_address_Line2}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad" >
+			<td>Invoice No. :${Package_Information.Invoice_No}</td>
+			<td></td>
+			<td>${Address_Digital_Commerce.City}</td>
+			<td></td>
+			<td>${Consumer_Communication_Address_Info.Shipment_city}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad" >
+			<td>Invoice Date: ${Package_Information.Invoice_Date}</td>
+			<td></td>
+			<td>${Address_Digital_Commerce.State}</td>
+			<td></td>
+			<td>${Consumer_Communication_Address_Info.Shipment_state}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+            <td>Package Size: ${Package_Information.Package_Size}</td>
+			<td></td>
+			<td>${Address_Digital_Commerce.ZipCode}</td>
+			<td></td>
+			<td>${Consumer_Communication_Address_Info.Shipment_zip_Code}</td>
+			<td></td>
+		</tr>
+
+		<tr class="dataRow" class="row-pad">
+			<td>Weight: ${Package_Information.Weight}</td>
+            <td></td>
+			<td>${Address_Digital_Commerce.Mobile_Number}</td>
+			<td></td>
+			<td>${Consumer_Communication_Address_Info.Shipment_Mobile_Number}</td>
+			<td></td>
+		</tr>
+
+	</table>
+
+    <p style="padding: 3px;"></p>
+    <p style="border: 1px solid black;"></p>
+    
+
+    <p style="padding: 2px; color: #fff;"></p>
+    
+
+
+    <p style="font-size: 12px;">Contact Us: 0808 765 432 | nslretail@nslhub.com </p>
+
+    <p style="font-size: 12px;">Warehouse address: Vaishnavi Tech Park, Bangalore, Karnataka, 560023</p>
+
+    <p class="invoiceBottom">This is a computer generated order. No signature required.</p>
+
+    <p style="padding: 2px; color: #fff;">html temp © 2021 SAU, All Right Reserved</p>
+
+</body>
+</html>
